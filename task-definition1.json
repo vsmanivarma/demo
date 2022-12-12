@@ -4,8 +4,8 @@
     ],
     "containerDefinitions": [
       {
-        "name": "test",
-        "image": "477368140520.dkr.ecr.us-east-1.amazonaws.com/test:latest",
+        "name": "demo",
+        "image": "212458924932.dkr.ecr.us-east-1.amazonaws.com/test:latest",
         "cpu": 0,
         "links": [],
         "portMappings": [
@@ -27,8 +27,8 @@
     "networkMode": "awsvpc",
     "memory": "512",
     "cpu": "256",
-    "executionRoleArn": "arn:aws:iam::477368140520:role/ecs-task-execution-role",
+    "executionRoleArn": "arn:aws:iam::212458924932:role/ecs-task-execution-role",
     "family": "latest",
-    "taskRoleArn": "arn:aws:iam::477368140520:role/ecs-task-execution-role"
+    "taskRoleArn": "arn:aws:iam::212458924932:role/ecs-task-execution-role"
   }
   
