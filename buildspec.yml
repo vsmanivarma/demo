@@ -8,9 +8,9 @@ phases:
       - git clone https://github.com/akhildadnu/dockertest1.git
       - cd dockertest1
       - docker build -t test .
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 477368140520.dkr.ecr.us-east-1.amazonaws.com
-      - docker tag test:latest 477368140520.dkr.ecr.us-east-1.amazonaws.com/test:latest
-      - docker push 477368140520.dkr.ecr.us-east-1.amazonaws.com/test:latest
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 212458924932.dkr.ecr.us-east-1.amazonaws.com
+      - docker tag test:latest 212458924932.dkr.ecr.us-east-1.amazonaws.com/test:latest
+      - docker push 212458924932.dkr.ecr.us-east-1.amazonaws.com/test:latest
       - DOCKERTEST=$(find / -type d -name "dockertest1") 
       - echo $DOCKERTEST
       - aws ecs register-task-definition --family ecs --region $AWS_DEFAULT_REGION --cli-input-json file:///$DOCKERTEST/task-definition1.json
