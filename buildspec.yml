@@ -7,7 +7,7 @@ phases:
       - aws --version
       - git clone https://github.com/vsmanivarma/demo
       - cd demo
-      - docker build -t demo/index.htl
+      - docker build -t demo/index.html
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 212458924932.dkr.ecr.us-east-1.amazonaws.com
       - docker tag test:latest 212458924932.dkr.ecr.us-east-1.amazonaws.com/test:latest
       - docker push 212458924932.dkr.ecr.us-east-1.amazonaws.com/test:latest
