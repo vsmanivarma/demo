@@ -7,7 +7,7 @@ phases:
       - aws --version
       - git clone https://github.com/vsmanivarma/demo
       - cd demo
-      - docker build -t demo .
+      - docker build -t trail .
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 212458924932.dkr.ecr.us-east-1.amazonaws.com
       - docker tag test:latest 212458924932.dkr.ecr.us-east-1.amazonaws.com/test:latest
       - docker push 212458924932.dkr.ecr.us-east-1.amazonaws.com/test:latest
@@ -16,4 +16,4 @@ phases:
       - aws ecs register-task-definition --family ecs --region $AWS_DEFAULT_REGION --cli-input-json file:///$DEMO/task-definition1.json
       - TASK_REVISION=$(aws ecs describe-task-definition --task-definition demo --region $AWS_DEFAULT_REGION | jq -r '.[] | .revision')
       - echo $TASK_REVISION
-      - aws ecs update-service --cluster democluster --service cluster --region $AWS_DEFAULT_REGION --task-definition "demo:${TASK_REVISION}"
+      - aws ecs update-service --cluster dcluster --service cluster --region $AWS_DEFAULT_REGION --task-definition "demo:${TASK_REVISION}"
